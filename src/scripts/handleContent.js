@@ -6,6 +6,7 @@ const handleContent = function () {
     const userInput = document.getElementById('userInput');
 
     const locationName = document.createElement('h1');
+    locationName.textContent = "LOS ANGELES"
     locationName.setAttribute('id', 'locationName');
 
     const forecast = document.createElement('div');
