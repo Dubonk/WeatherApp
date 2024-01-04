@@ -14,8 +14,7 @@ const getLaWeather = async function () {
         feelsLike.textContent = `Feels like ${weatherData.current.feelslike_f}°F`;
         precip.textContent = `Precipitation: ${weatherData.current.precip_in}%`;
         humidity.textContent = `Humidity: ${weatherData.current.humidity}%`;
-        wind.textContent = `Wind: ${weatherData.current.wind_mph}mph`;
-        console.log(weatherData); 
+        wind.textContent = `Wind: ${weatherData.current.wind_mph}mph`; 
     } catch (error) {
         console.log(error);
     }
@@ -52,8 +51,6 @@ const getLaWeather = async function () {
         day3Date.textContent = dayName3;
         day3Icon.src = `https:${forecastData.forecast.forecastday[3].day.condition.icon}`;
         day3Temp.textContent = `${forecastData.forecast.forecastday[3].day.avgtemp_f}°F`;
-        
-        console.log(forecastData);
     } catch (error) {
         console.log(error);
     }

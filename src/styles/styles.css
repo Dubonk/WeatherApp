@@ -3,10 +3,6 @@
     src: url(../Roboto-Black.ttf) format('ttf');
 }
 
-/* * {
-    outline: 1px solid red;
-} */
-
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -14,7 +10,6 @@ body {
     height: 100vh;
     background-image: url(../imgs/earth.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
@@ -36,7 +31,7 @@ body {
 }
 
 #content {
-    width: 450px;
+    width: 500px;
     height: 650px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
@@ -97,4 +92,20 @@ body {
 
 #userInput:focus {
     outline: none;
+}
+
+@media (max-width: 768px) {
+    #content {
+        width: 350px;
+        height: fit-content;
+    }
+
+    #userInput{
+        margin-left: 25px;
+        align-self: flex-start;
+        margin-top: 1.6rem;
+    }
+    .dates {
+        font-size: 22px;
+    }
 }
