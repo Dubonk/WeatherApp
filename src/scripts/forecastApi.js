@@ -32,7 +32,6 @@ const getForecastData = async function () {
         day3Date.textContent = dayName3;
         day3Icon.src = `https:${forecastData.forecast.forecastday[3].day.condition.icon}`;
         day3Temp.textContent = `${forecastData.forecast.forecastday[3].day.avgtemp_f}°F`;
-        
         console.log(forecastData);
     } catch (error) {
         console.log(error);

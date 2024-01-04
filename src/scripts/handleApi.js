@@ -15,7 +15,6 @@ const getWeatherData = async function () {
         precip.textContent = `Precipitation: ${weatherData.current.precip_in}%`;
         humidity.textContent = `Humidity: ${weatherData.current.humidity}%`;
         wind.textContent = `Wind: ${weatherData.current.wind_mph}mph`;
-        // console.log(weatherData); 
     } catch (error) {
         console.log(error);
     }
