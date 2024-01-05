@@ -8,11 +8,36 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100vh;
-    background-image: url(../imgs/earth.jpg);
+    position: relative;
+    background-image: url(../imgs/starsBg.jpg);
     background-size: cover;
     color: white;
     display: flex;
     flex-direction: column;
+}
+
+#spinning {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    border: solid 1px grey;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#spinning::after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../imgs/Remove-bg.ai_1704486168955.png);
+    background-repeat: no-repeat;
+    content: '';
+    background-size: 500px;
+    animation: spin 60s linear infinite;
+    z-index: -1;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); } /* Simple rotate animation */
 }
 
 #header {
