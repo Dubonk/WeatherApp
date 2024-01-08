@@ -141,11 +141,11 @@ img:hover {
         font-size: 22px;
     }
     #spinning::after {
-        background-size: 200%;
+        background-size: 150%;
     }
 }
 
-@media (max-height: 400px) {
+@media (max-height: 390px) {
      body {
         justify-content: unset;
     } 
@@ -154,5 +154,15 @@ img:hover {
         top: 50%;
         border: none;
         height: 150%;
+    }
+    #spinning::after {
+        background-size: contain;
+    }
+}
+
+@media (max-width: 380px) {
+
+    body {
+        font-size: 75%;
     }
 }
