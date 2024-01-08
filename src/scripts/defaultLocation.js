@@ -40,17 +40,19 @@ const getLaWeather = async function () {
         const dayName1 = new Intl.DateTimeFormat('en-US', options).format(date1); 
         const dayName2 = new Intl.DateTimeFormat('en-US', options).format(date2);
         const dayName3 = new Intl.DateTimeFormat('en-US', options).format(date3);
+
+        currentLow.textContent = `Low: ${forecastData.forecast.forecastday[0].day.mintemp_f}°F`;
         day1Date.textContent = dayName1;
         day1Icon.src = `https:${forecastData.forecast.forecastday[1].day.condition.icon}`;
-        day1Temp.textContent = `${forecastData.forecast.forecastday[1].day.avgtemp_f}°F`;
+        day1Temp.innerHTML = `High: ${forecastData.forecast.forecastday[1].day.avgtemp_f}°F <br>Low: ${forecastData.forecast.forecastday[1].day.mintemp_f}°F`;
 
         day2Date.textContent = dayName2;
         day2Icon.src = `https:${forecastData.forecast.forecastday[2].day.condition.icon}`;
-        day2Temp.textContent = `${forecastData.forecast.forecastday[2].day.avgtemp_f}°F`;
+        day2Temp.innerHTML = `High: ${forecastData.forecast.forecastday[2].day.avgtemp_f}°F <br>Low: ${forecastData.forecast.forecastday[2].day.mintemp_f}°F`;
 
         day3Date.textContent = dayName3;
         day3Icon.src = `https:${forecastData.forecast.forecastday[3].day.condition.icon}`;
-        day3Temp.textContent = `${forecastData.forecast.forecastday[3].day.avgtemp_f}°F`;
+        day3Temp.innerHTML = `High: ${forecastData.forecast.forecastday[3].day.avgtemp_f}°F <br>Low: ${forecastData.forecast.forecastday[3].day.mintemp_f}°F`;
     } catch (error) {
         console.log(error);
     }

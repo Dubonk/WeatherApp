@@ -21,6 +21,9 @@ const handleContent = function () {
     const currentIcon = new Image();
     currentIcon.setAttribute('id', 'currentIcon');
 
+    const currentLow = document.createElement('div');
+    currentLow.setAttribute('id','currentLow');
+
     const feelsLike = document.createElement('div');
     feelsLike.setAttribute('id', 'feelsLike');
 
@@ -33,8 +36,9 @@ const handleContent = function () {
     const wind = document.createElement('div');
     wind.setAttribute('id', 'wind');
 
+    today.appendChild(currentWeather);
     today.appendChild(currentIcon);
-    today.appendChild(currentWeather)
+    today.appendChild(currentLow);
     today.appendChild(feelsLike);
     today.appendChild(precip);
     today.appendChild(humidity);

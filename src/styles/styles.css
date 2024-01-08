@@ -76,7 +76,7 @@ body {
 }
 
 #currentIcon {
-    width: 75px;
+    width: 125px;
 }
 
 #current {
@@ -95,6 +95,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 }
 
 #today {
@@ -146,6 +147,9 @@ img:hover {
 }
 
 @media (max-height: 400px) {
+     body {
+        justify-content: unset;
+    } 
     #spinning {
         overflow: visible;
         top: 50%;
