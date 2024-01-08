@@ -14,6 +14,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 #spinning {
@@ -29,15 +30,16 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(../imgs/Remove-bg.ai_1704486168955.png);
+    background-image: url(../imgs/earth1.png);
+    background-position: center;
     background-repeat: no-repeat;
     content: '';
-    background-size: 500px;
-    animation: spin 60s linear infinite;
+    background-size: contain;
+    animation: spin 240s linear infinite;
     z-index: -1;
 }
 @keyframes spin {
-    100% { transform: rotate(360deg); } /* Simple rotate animation */
+    100% { transform: rotate(360deg); }
 }
 
 #header {
@@ -137,5 +139,17 @@ img:hover {
     }
     .dates {
         font-size: 22px;
+    }
+    #spinning::after {
+        background-size: 200%;
+    }
+}
+
+@media (max-height: 400px) {
+    #spinning {
+        overflow: visible;
+        top: 50%;
+        border: none;
+        height: 150%;
     }
 }
