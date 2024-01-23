@@ -11,16 +11,20 @@ const getForecastData = async function () {
     try{
         const forecastResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=feb7b7bfa5f543b49ee173908232912&q=${userInput.value}&days=3`);
         const forecastData = await forecastResponse.json();
-        const dateString1 = forecastData.forecast.forecastday[0].date;
-        const dateString2 = forecastData.forecast.forecastday[1].date;
-        const dateString3 = forecastData.forecast.forecastday[2].date;
-        const date1 = new Date(dateString1 + 'PST');
-        const date2 = new Date(dateString2 + 'PST');
-        const date3 = new Date(dateString3 + 'PST');
+        // const dateString1 = forecastData.forecast.forecastday[0].date;
+        // const dateString2 = forecastData.forecast.forecastday[1].date;
+        // const dateString3 = forecastData.forecast.forecastday[2].date;
+        // const date1 = new Date(dateString1 + 'PST');
+        // const date2 = new Date(dateString2 + 'PST');
+        // const date3 = new Date(dateString3 + 'PST');
+        const date1 = new Date(forecastData.forecast.forecastday[0].date);
+        const date2 = new Date(forecastData.forecast.forecastday[1].date);
+        const date3 = new Date(forecastData.forecast.forecastday[2].date);
+
         const options = { weekday: 'long'};
-        const dayName1 = new Intl.DateTimeFormat('en-US', options).format(date1); 
-        const dayName2 = new Intl.DateTimeFormat('en-US', options).format(date2);
-        const dayName3 = new Intl.DateTimeFormat('en-US', options).format(date3);
+        const dayName1 = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'UTC' }).format(date1); 
+        const dayName2 = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'UTC' }).format(date2);
+        const dayName3 = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'UTC' }).format(date3);
         console.log(forecastData);
         console.log(dayName1);
 
