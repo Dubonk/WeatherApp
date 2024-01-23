@@ -25,10 +25,13 @@ const addToBody = function () {
     content.setAttribute('id', 'content');
 
     container.appendChild(content);
+    const bg = document.createElement('div');
+    bg.setAttribute('id', 'bg');
 
     document.body.appendChild(header);
     document.body.appendChild(container);
     document.body.appendChild(spinningImg);
+    document.body.appendChild(bg);
 };
 
 export { addToBody };
