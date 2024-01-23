@@ -14,13 +14,15 @@ const getForecastData = async function () {
         const dateString1 = forecastData.forecast.forecastday[0].date;
         const dateString2 = forecastData.forecast.forecastday[1].date;
         const dateString3 = forecastData.forecast.forecastday[2].date;
-        const date1 = new Date(dateString1);
-        const date2 = new Date(dateString2);
-        const date3 = new Date(dateString3);
-        const options = { weekday: 'long', timeZone: 'America/Los_angeles' };
+        const date1 = new Date(dateString1 + 'PST');
+        const date2 = new Date(dateString2 + 'PST');
+        const date3 = new Date(dateString3 + 'PST');
+        const options = { weekday: 'long'};
         const dayName1 = new Intl.DateTimeFormat('en-US', options).format(date1); 
         const dayName2 = new Intl.DateTimeFormat('en-US', options).format(date2);
         const dayName3 = new Intl.DateTimeFormat('en-US', options).format(date3);
+        console.log(forecastData);
+        console.log(dayName1);
 
         currentLow.textContent = `Low: ${forecastData.forecast.forecastday[0].day.mintemp_f}°F`;
 

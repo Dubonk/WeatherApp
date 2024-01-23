@@ -127,6 +127,9 @@ img:hover {
 }
 
 @media (max-width: 768px) {
+    body {
+        background: black;
+    }
     #content {
         width: 350px;
         height: fit-content;
